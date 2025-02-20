@@ -1,0 +1,27 @@
+cookie:
+  expiry_days: 30
+  key: "J9s52EHW31CZSJH8MSKr"
+  name: "eni_driver_cookie"
+credentials:
+  usernames:
+    mpoggi:
+      email: marco.poggi@it.ey.com
+      failed_login_attempts: 0
+      first_name: Marco
+      last_name: Poggi
+      logged_in: False
+      password: "$2b$12$KiOt1FmVMn7NeOX3q0Dn1eBFfKpbqNeuoQXOCq9u6tKdZVGJKMrty"
+    tfarne:
+      email: tommaso.farneti@it.ey.com
+      failed_login_attempts: 0
+      first_name: Tommaso
+      last_name: Farneti
+      logged_in: False
+      password: "$2b$12$Qa4JA9T6Dw1xqpzYBkWnve7DQtnXTHwSAoxEycrhRgWB3SYGAJecq"
+    cscalia:
+      email: cesare.scalia@eni.it
+      failed_login_attempts: 0
+      first_name: Cesare
+      last_name: Scalia
+      logged_in: False
+      password: "$2b$12$WA830pjMkRrUMWzP/6kzA.t7IWLDsCCgO9FrEfMo1jWSEMmkaUgbi"
