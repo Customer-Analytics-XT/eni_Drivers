@@ -28,8 +28,9 @@ if st.session_state['authentication_status']:
 
     # Carica il modello e il tokenizer
     model_path = "marcopoggiey/bert-driver4"
-    model = AutoModelForSequenceClassification.from_pretrained(model_path)
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    with st.spinner("Caricamento del modello..."):
+        model = AutoModelForSequenceClassification.from_pretrained(model_path)
+        tokenizer = AutoTokenizer.from_pretrained(model_path)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
