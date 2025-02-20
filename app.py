@@ -26,7 +26,7 @@ authenticator.login()
 
 if st.session_state['authentication_status']:
 
-    st.markdown(f"## Ciao, {st.session_state['name'].split(' ')[0]}!👋")
+    st.markdown(f"###👋Ciao, {st.session_state['name'].split(' ')[0]}!")
     authenticator.logout()
 
     # Carica il modello e il tokenizer
