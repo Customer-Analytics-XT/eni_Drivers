@@ -6,14 +6,11 @@ import torch
 import matplotlib.pyplot as plt
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import os
-import toml
 
 st.set_page_config(page_title="Driver", page_icon="🚙")
 st.title("🐕🚙Eni Driver 4.0")
 
-with open("secrets.toml", "r") as f:
-    secrets = toml.load(f)
-os.environ["HF_TOKEN"] = secrets["huggingface"]["token"]
+os.environ["HF_TOKEN"] = st.secrets.huggingface.token
 
 with open('config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
