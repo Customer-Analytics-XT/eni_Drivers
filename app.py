@@ -27,7 +27,7 @@ if st.session_state['authentication_status']:
     authenticator.logout()
 
     # Carica il modello e il tokenizer
-    model_path = "bert-driver4"
+    model_path = "marcopoggiey/bert-driver4"
     model = AutoModelForSequenceClassification.from_pretrained(model_path)
     tokenizer = AutoTokenizer.from_pretrained(model_path)
 
