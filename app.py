@@ -28,10 +28,13 @@ if st.session_state['authentication_status']:
 
     # Carica il modello e il tokenizer
     model_path = "marcopoggiey/bert-driver4"
-    with st.spinner("Caricamento del modello..."):
-        model = AutoModelForSequenceClassification.from_pretrained(model_path)
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
+    if "model" not in st.session_state:
+        with st.spinner("Caricamento del modello..."):
+            st.session_state["model"] = AutoModelForSequenceClassification.from_pretrained(model_path)
+            st.session_state["tokenizer"] = AutoTokenizer.from_pretrained(model_path)
 
+    model = st.session_state["model"]
+    tokenizer = st.session_state["tokenizer"]
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     model.eval()
