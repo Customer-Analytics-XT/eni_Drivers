@@ -4,6 +4,13 @@ cookie:
   name: "eni_driver_cookie"
 credentials:
   usernames:
+    afiletti:
+      email: andrea.filetti@eni.it
+      failed_login_attempts: 0
+      first_name: Andrea
+      last_name: Filetti
+      logged_in: False
+      password: "$2b$12$CjjU2aEMUB8.nZjW6xXxm.uATMCbSKJQJUslSAclylM8l/WYycIdG"
     mpoggi:
       email: marco.poggi@it.ey.com
       failed_login_attempts: 0
@@ -25,10 +32,4 @@ credentials:
       last_name: Scalia
       logged_in: False
       password: "$2b$12$WA830pjMkRrUMWzP/6kzA.t7IWLDsCCgO9FrEfMo1jWSEMmkaUgbi"
-    afiletti:
-      email: andrea.filetti@eni.it
-      failed_login_attempts: 0
-      first_name: Andrea
-      last_name: Filetti
-      logged_in: False
-      password: "$2b$12$CjjU2aEMUB8.nZjW6xXxm.uATMCbSKJQJUslSAclylM8l/WYycIdG"
+    
