@@ -8,7 +8,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import os
 
 st.set_page_config(page_title="Driver", page_icon="🚙")
-st.title("🐕🚙Eni Driver 4.0")
+st.title("🚙Eni Driver")
 
 os.environ["HF_TOKEN"] = st.secrets.huggingface.token
 
@@ -26,7 +26,7 @@ authenticator.login()
 
 if st.session_state['authentication_status']:
 
-    st.markdown(f"### 👋Ciao, {st.session_state['name'].split(' ')[0]}!")
+    st.markdown(f"### 👋Benvenuto, {st.session_state['name'].split(' ')[0]}!")
     authenticator.logout()
 
     # Carica il modello e il tokenizer
