@@ -34,7 +34,8 @@ if st.session_state['authentication_status']:
     if "model" not in st.session_state:
         with st.spinner("Caricamento del modello..."):
             st.session_state["model"] = AutoModelForSequenceClassification.from_pretrained(model_path)
-            st.session_state["tokenizer"] = AutoTokenizer.from_pretrained(model_path)
+    if "tokenizer" not in st.session_state:
+        st.session_state["tokenizer"] = AutoTokenizer.from_pretrained(model_path)
 
     model = st.session_state["model"]
     tokenizer = st.session_state["tokenizer"]
