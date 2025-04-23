@@ -26,9 +26,6 @@ authenticator.login()
 
 if st.session_state["authentication_status"]:
 
-    st.markdown(f"### 👋 Benvenuto, {st.session_state['name'].split(' ')[0]}!")
-    authenticator.logout()
-
     # -------------- scelta modello -----------------------------------------
     options = ["", "Driver 4.0", "Driver 4.2"]           # "" = placeholder
     model_choice = st.selectbox(
@@ -41,7 +38,7 @@ if st.session_state["authentication_status"]:
 
     # se l’utente non ha ancora selezionato nulla, fermiamo l’esecuzione
     if model_choice == "":
-        st.info("⬆️  Seleziona una versione per caricare il modello e avviare la classificazione.")
+        st.info("Seleziona una versione per caricare il modello e avviare la classificazione.")
         st.stop()
 
     # -------------- mapping & caricamento modello --------------------------
@@ -53,6 +50,7 @@ if st.session_state["authentication_status"]:
 
     # (ri)carica modello/tokenizer solo se è cambiato
     if st.session_state.get("current_model_path") != model_path:
+        st.cache_data.clear() 
         with st.spinner("Caricamento del modello…"):
             st.session_state["model"] = AutoModelForSequenceClassification.from_pretrained(
                 model_path, token=st.secrets.huggingface.token, trust_remote_code=True
@@ -128,6 +126,8 @@ if st.session_state["authentication_status"]:
                 xpos = v - 0.03 if v > 0.9 else v + 0.01
                 ax.text(xpos, i, f"{v:.2f}", va="center")
             st.pyplot(fig)
+
+    authenticator.logout()
 
 elif st.session_state["authentication_status"] is False:
     st.error("Username/password errati")
