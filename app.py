@@ -27,7 +27,7 @@ authenticator.login()
 if st.session_state["authentication_status"]:
 
     # -------------- scelta modello -----------------------------------------
-    options = ["", "Driver 4.0", "Driver 4.2"]           # "" = placeholder
+    options = ["", "Driver 4.0", "Driver 4.3"]           # "" = placeholder
     model_choice = st.selectbox(
         "Seleziona la versione del driver",
         options,
@@ -44,7 +44,7 @@ if st.session_state["authentication_status"]:
     # -------------- mapping & caricamento modello --------------------------
     model_mapping = {
         "Driver 4.0": "marcopoggiey/bert-driver4",
-        "Driver 4.2": "marcopoggiey/eurobert-driver4-2",
+        "Driver 4.3": "marcopoggiey/eurobert-driver4-3",
     }
     model_path = model_mapping[model_choice]
 
@@ -77,7 +77,7 @@ if st.session_state["authentication_status"]:
             "Leadership",
             "Performance",
         ]
-        if model_choice == "Driver 4.2"
+        if model_choice != "Driver 4.0"
         else [
             "Products",
             "Innovation",
